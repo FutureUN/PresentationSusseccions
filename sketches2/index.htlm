@@ -11,11 +11,13 @@
     <script src="lib/js/head.min.js"></script>
     <script src="js/reveal.js"></script>
          <script src="sequence.js"></script>
+         <script src="Composite.js"></script>
      <script src="leyland.js"></script>
        <script src="abundants.js"></script>
-  <script src="integer_sequence.js"></script>
-
-
+  <script src="curveChart.js"></script>
+  <script src="lineChart.js"></script>
+  <script src="barChart.js"></script>
+    <script src="draw.js"></script>
  
   
   </body>

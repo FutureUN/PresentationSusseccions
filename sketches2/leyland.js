@@ -11,8 +11,8 @@ var Leyland = function(p)
         layr.reverse();
         for(var i=0;i<n;i++)
         {
-            py = p.pmouseY - p.width/2;
-            px = p.pmouseX - p.height/2;
+            py = p.mouseY - p.width/2;
+            px = p.mouseX - p.height/2;
             var a = p.map(layr[i],lay[0],layr[0],lay[0],p.width);
             var b = p.map(lay[i],lay[0],layr[0],0,100);
             p.fill(hue,100,b*(n));

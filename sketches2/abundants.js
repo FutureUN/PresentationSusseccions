@@ -68,15 +68,19 @@ this.draw = function ( n)
      for (var i = 0 ; i < terms; i ++)
        wth+= abundants[1][i];
      var x=0;
+     if ( n < 3 )
+       wth *= 3;
      for (var i = 0 ; i < terms; i ++)
      {
-       x += p.map (abundants[1][i]/2, 0, wth, 0, 1000);
-       var radious = p.map(abundants[1][i], 0, wth, 0, 1000);
-       p.ellipse ( x ,radious/2, radious, radious);
-       var y = radious + p.map (abundants[0][i]/2, 0, wth, 0, 1000);
-       radious = p.map(abundants[0][i], 0, wth, 0, 1000);
+       x += p.map (abundants[1][i]/2, 0, wth, 0, p.width);
+       var radious = p.map(abundants[0][i], 0, wth, 0, p.width);
+       p.fill ( hue, p.map ( abundants [0][i], 0, abundants[0][terms-1], 0, 100),100);
+       p.ellipse ( x ,radious/2 + p.mouseY, radious, radious);
+       var y = radious + p.map (abundants[1][i]/2, 0, wth, 0, p.width) + p.mouseY;
+       radious = p.map(abundants[1][i], 0, wth, 0, p.width);
+       p.fill ( hue + 130, p.map ( abundants [1][i], 0, abundants[1][terms-1], 0, 100) , 100);
        p.ellipse ( x ,y, radious, radious);
-       x +=  p.map (abundants[1][i]/2, 0, wth, 0, 1000);
+       x +=  p.map (abundants[1][i]/2, 0, wth, 0, p.width);
 
      }
     
